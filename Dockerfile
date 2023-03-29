@@ -5,10 +5,7 @@ FROM debian:buster-slim
 # @see http://www.postfix.org/announcements/postfix-3.3.0.html
 
 # Preselections for installation
-RUN echo smtp > /etc/hostname \
-  && echo "postfix postfix/mailname string smtp.example.com" | debconf-set-selections \
-  && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
-  && apt-get update \
+RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install \
     postfix \
     libsasl2-modules \
