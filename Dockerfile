@@ -13,6 +13,7 @@ RUN echo smtp > /etc/hostname \
     postfix \
     libsasl2-modules \
     ca-certificates \
+    iputils-ping \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
